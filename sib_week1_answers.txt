@@ -1,3 +1,34 @@
+What is a route, and how do you specify one in Flask?
+A route is the link between the URL specified by the user and the file or page returned by the server.  When a URL is received from the user, the route describes the logic to specify the correct page to return.  In order to specify a route, we invoke the flask.Flask.route() decorator as such:
+@app.route("<specified URL>")
+def <return function>:
+	specified logic
+
+What is the only route we’ve specified in our application?
+We have specified the "/" route which denotes the root of our website.
+
+What is the method that gets called when we hit that route? 
+hello()
+
+If I wanted to add a route at “/world” that printed “Hello, World” on the screen, what would that code look like?
+@app.route("/world")
+def hello_world():
+	return "Hello, World"
+
+If I create a new application and import testingflask.py (a.k.a. I am not running it directly), will code under the ‘if __name__ == “__main__”: be executed? Why not?
+The code under if __name__ will not be executed.  The __name__ variable is only set to main when the file is being run directly eg. python testingflask.py.  This allows us to keep executables in modules that also support being imported, and use those function or object definitions in other files without executing code.
+
+What is the ‘base case’ where we don’t call ‘blastoff’ again? 
+When is less than or equal to zero and the string "Blastoff!" is printed
+
+What is the ‘simpler’ form of our input (‘n’) that we pass into ‘blastoff’?
+n-1
+
+
 *** Cut and paste the for loop here ***
+{% for message in messages %}
+{{message}}
+				{% endfor %}
 
 *** What is the for loop doing? ***
+The "get_flashed_messages()" function returns a list of messages.  The for loop goes through each one and prints it to the screen
