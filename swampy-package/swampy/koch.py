@@ -32,11 +32,35 @@ def koch(t, length):
 #koch(bob, 300)
 
 def snowflake(t, length):
-    for i in range(2):
+    for i in range(3):
         koch(t, length)
         t.rt(120)
-    koch(t,length)
 
-snowflake(bob, 100)
+#snowflake(bob, 100)
+
+def quadratic_koch(t, length):
+    """Draws a quadratic_koch curve with the given width.
+
+    Args:
+        t: Turtle
+        length: trunk length
+    """
+    if length < 4.0:
+        fd(t, length)
+        return
+    else:
+        short_length = length / 4.0
+        angle = 90
+        quadratic_koch(t, short_length)
+        lt(t, angle)
+        quadratic_koch(t, short_length)
+        rt(t, angle)
+        quadratic_koch(t, short_length)
+        rt(t, angle)
+        quadratic_koch(t, short_length)
+        lt(t, angle)
+        quadratic_koch(t, short_length)
+
+quadratic_koch(bob,1000)
 
 
