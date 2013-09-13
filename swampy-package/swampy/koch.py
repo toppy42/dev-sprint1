@@ -32,10 +32,9 @@ def koch(t, length):
 #koch(bob, 300)
 
 def snowflake(t, length):
-    for i in range(2):
+    for i in range(3):
         koch(t, length)
         t.rt(120)
-    koch(t,length)
 
 snowflake(bob, 100)
 
